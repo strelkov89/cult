@@ -1,0 +1,9 @@
+#!/bin/bash
+
+cd /var/www/mini-sites/culture
+git fetch --all
+git reset --hard origin/master
+#composer update
+
+php yii migrate/up --interactive=
+php yii asset assets.php config/assets-prod.php
